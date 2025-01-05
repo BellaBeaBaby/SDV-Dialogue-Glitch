@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stardew Valley Command Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Stardew Dialogue Command Generator</h1>
+        
+        <!-- Tabs Navigation -->
+        <div class="tabs">
+            <button class="tab-button active" data-tab="items">Items</button>
+            <button class="tab-button" data-tab="money">Money</button>
+            <button class="tab-button" data-tab="friendship">Friendship</button>
+        </div>
+        <div class="tab-content">
+            
+            <!-- Items Tab Pane -->
+            <div id="items" class="tab-pane active">
+                <button id="add-item-btn" class="add-item-btn">+</button>
+                <div id="item-form" class="item-form hidden">
+                    <!-- Search Container -->
+                    <div class="search-container">
+                        <input type="text" id="item-search" placeholder="Type item name..." autocomplete="off">
+                        <div id="item-suggestions" class="suggestions"></div>
+                    </div>
+                </div>
+                <div id="added-items" class="added-items"></div>
+            </div>
+            
+            <!-- Money Tab Pane -->
+            <div id="money" class="tab-pane">
+                <div class="money-control">
+                    <label class="money-checkbox">
+                        <input type="checkbox" id="enable-money">
+                        Add Money
+                    </label>
+                    <label class="money-amount-label">
+                        Amount:
+                        <input type="number" id="money-amount" min="0" value="0" disabled>
+                    </label>
+                </div>
+                <!-- Placeholder for error messages -->
+                <div id="money-error" class="error-message hidden">Please enter a valid number.</div>
+            </div>
+            
+            <!-- Friendship Tab Pane -->
+            <div id="friendship" class="tab-pane">
+                <div class="friendship-info">
+                    <p>Use this section to add hearts with villagers not set them.</p>
+                </div>
+                <div id="friendship-list" class="friendship-list">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Final Command -->
+        <div class="final-command-container">
+            <h2>Final Command:</h2>
+            <p class="subtitle">Name a chicken this!</p>
+            <div id="final-command-preview" class="final-command-preview">
+                <pre id="final-command"># Commands will appear here...</pre>
+            </div>
+            <button id="expand-command-btn" class="expand-command-btn hidden">Expand</button>
+            <button id="copy-command-btn" class="copy-command-btn">Copy</button>
+        </div>
+    </div>
+    <script src="scripts/splitID.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+</html>

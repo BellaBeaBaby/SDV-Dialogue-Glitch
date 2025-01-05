@@ -1,0 +1,416 @@
+/* Base Styles */
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.subtitle {
+    color:darkgrey;
+    font-size: small;
+    margin-top: 0;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    background-color: #1f1f1f;
+    border: none;
+    color: #e0e0e0;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 16px;
+}
+
+.tab-button.active, .tab-button:hover {
+    background-color: #333333;
+}
+
+.tab-content {
+    max-width: 1200px; 
+    margin: 0 auto;
+    position: relative; 
+}
+
+/* Hide all tab panes by default */
+.tab-pane {
+    display: none;
+}
+
+/* Show the active tab pane */
+.tab-pane.active {
+    display: block;
+}
+
+.add-item-btn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+}
+
+.add-item-btn:hover {
+    background-color: #45a049;
+}
+
+.item-form {
+    margin-bottom: 20px;
+}
+
+/* Search Container */
+.search-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px; 
+    margin: 0 auto; 
+}
+
+#item-search {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    box-sizing: border-box; 
+}
+
+.suggestions {
+    background-color: #1f1f1f;
+    border: 1px solid #333;
+    border-top: none;
+    max-height: 200px;
+    overflow-y: auto;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0; 
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.suggestion-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.suggestion-item:hover {
+    background-color: #333333;
+}
+
+.suggestion-item img {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+    flex-shrink: 0; 
+}
+
+.suggestion-item span {
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.added-items {
+    margin-bottom: 20px;
+}
+
+.added-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.added-item img {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+}
+
+.added-item .details {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; 
+}
+
+.added-item .details span {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.added-item .details label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+}
+
+.added-item .details input.qty-input {
+    width: 60px;
+    padding: 5px;
+    margin-left: 5px;
+    margin-right: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    box-sizing: border-box;
+}
+
+.added-item .details select.quality-select {
+    width: 120px; 
+    padding: 5px;
+    margin-left: 5px;
+    margin-right: 15px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    box-sizing: border-box;
+    min-width: 100px; 
+}
+
+.added-item .remove-btn {
+    background-color: #ff4d4d;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.added-item .remove-btn:hover {
+    background-color: #e60000;
+}
+
+/* Friendship Tab Styles */
+.friendship-info {
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    padding: 10px;
+    background-color: #1f1f1f;
+    border: 1px solid #333;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.friendship-info p {
+    margin: 0;
+    font-size: 16px;
+    text-align: center;
+}
+
+.friendship-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.friendship-list .villager-entry {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: #1f1f1f;
+    padding: 15px;
+    border-radius: 5px;
+    width: calc(33.333% - 20px);
+    box-sizing: border-box;
+}
+
+.friendship-list .villager-entry img.preview-img {
+    width: 128px;
+    height: 128px;
+    object-fit: cover;
+}
+
+.friendship-list .villager-entry span.villager-name {
+    font-size: 16px;
+    text-align: center;
+}
+
+.friendship-list .villager-entry input.heart-input {
+    width: 60px;
+    padding: 5px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.friendship-list .villager-entry img.heart-img {
+    width: 21px;
+    height: 18px;
+}
+
+.friendship-list .villager-entry .villager-error {
+    color: #ff4d4d;
+    font-size: 14px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.final-command-container {
+    max-width: 1200px; 
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #1f1f1f;
+    border: 1px solid #333;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.final-command-container h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.final-command-preview {
+    max-height: 200px; /*like 5 lines */
+    overflow: hidden;
+    position: relative;
+}
+
+.final-command-preview.expanded {
+    max-height: none;
+}
+
+.final-command-container pre {
+    background-color: #121212;
+    padding: 10px;
+    border-radius: 5px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 14px;
+    color: #e0e0e0;
+    margin: 0;
+}
+
+.expand-command-btn,
+.copy-command-btn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+    font-size: 14px;
+}
+
+.expand-command-btn:hover,
+.copy-command-btn:hover {
+    background-color: #45a049;
+}
+
+.expand-command-btn {
+    margin-right: 10px;
+}
+
+.copy-command-btn {
+    background-color: #007BFF;
+}
+
+.copy-command-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Money Tab Pane Styles */
+.money-control {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 400px; 
+    margin: 20px auto;
+}
+
+.money-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+}
+
+.money-amount-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+}
+
+.money-control input[type="number"] {
+    width: 150px; 
+    padding: 5px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    box-sizing: border-box;
+}
+
+.money-control input[type="number"]:disabled {
+    background-color: #2a2a2a;
+}
+
+.error-message {
+    color: #ff4d4d;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 1200px) {
+    .friendship-list .villager-entry {
+        width: calc(50% - 20px); /* Two per row */
+    }
+}
+
+@media (max-width: 768px) {
+    .friendship-list .villager-entry {
+        width: 100%; /* One per row */
+    }
+    
+    .friendship-info p {
+        font-size: 14px;
+    }
+}
