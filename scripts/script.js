@@ -21,6 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let allItems = [];
     let allFriendships = [];
     let finalCommands = [];
+    let formattedCommands
+
     fetch('allItems.json')
         .then(response => response.json())
         .then(data => {
@@ -271,7 +273,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const combinedCommands = finalCommands.join('\n');
     
         // Use splitId() function to format the commands
-        const formattedCommands = splitId(combinedCommands);
+        formattedCommands = splitId(combinedCommands);
     
         if (formattedCommands.trim() === '') {
             finalCommandPre.textContent = "# Commands will appear here...";
@@ -355,7 +357,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Copy
     copyCommandBtn.addEventListener('click', () => {
-        const commandsToCopy = finalCommandPre.textContent;
+        const commandsToCopy = formattedCommands;
         navigator.clipboard.writeText(commandsToCopy).then(() => {
             copyCommandBtn.textContent = 'Copied!';
             setTimeout(() => {
