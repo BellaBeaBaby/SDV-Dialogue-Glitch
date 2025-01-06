@@ -1,0 +1,62 @@
+[
+    {
+      "Name": "Forest Magic",
+      "Command": "#$action AddMail Current canReadJunimoText recieved",
+      "Img": "powers/Forest_Magic.png"
+    },
+    {
+      "Name": "Dwarvish Translation Guide",
+      "Command": "#$action AddMail Host HasDwarvishTranslationGuide recieved",
+      "Img": "powers/Dwarvish_Translation_Guide.png"
+    },
+    {
+      "Name": "Rusty Key",
+      "Command": "#$action AddMail Host HasRustyKey recieved",
+      "Img": "powers/Rusty_Key.png"
+    },
+    {
+      "Name": "Club Card",
+      "Command": "#$action AddMail Current HasClubCard recieved",
+      "Img": "powers/Club_Card.png"
+    },
+    {
+      "Name": "Special Charm",
+      "Command": "#$action AddMail Current HasSpecialCharm recieved",
+      "Img": "powers/Special_Charm.png"
+    },
+    {
+      "Name": "Skull Key",
+      "Command": "#$action AddMail Host HasSkullKey recieved",
+      "Img": "powers/Skull_Key.png"
+    },
+    {
+      "Name": "Magnifying Glass",
+      "Command": "#$action AddMail Current HasMagnifyingGlass recieved",
+      "Img": "powers/Magnifying_Glass.png"
+    },
+    {
+      "Name": "Dark Talisman",
+      "Command": "#$action AddMail Current HasDarkTalisman recieved",
+      "Img": "powers/Dark_Talisman.png"
+    },
+    {
+      "Name": "Magic Ink",
+      "Command": "#$action AddMail Current HasMagicInk recieved",
+      "Img": "powers/Magic_Ink.png"
+    },
+    {
+      "Name": "Bear's Knowledge",
+      "Command": "#$action MarkEventSeen Current 2120303 true",
+      "Img": "powers/Dark_Talisman.png"
+    },
+    {
+      "Name": "Spring Onion Mastery",
+      "Command": "#$action MarkEventSeen Current 3910979 true",
+      "Img": "powers/Spring_Onion_Mastery.png"
+    },
+    {
+      "Name": "Key To The Town",
+      "Command": "#$action AddMail Current HasTownKey recieved",
+      "Img": "powers/Key_To_The_Town.png"
+    }
+]

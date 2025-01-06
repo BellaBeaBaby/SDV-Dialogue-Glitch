@@ -18,8 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Friendship Tab Elements
     const friendshipList = document.getElementById('friendship-list');
     
+    // Powers Tab Elements
+    const powersList = document.getElementById('powers-list');
+    
     let allItems = [];
     let allFriendships = [];
+    let allPowers = [];
     let finalCommands = [];
     let formattedCommands
 
@@ -70,6 +74,40 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             
             friendshipList.appendChild(friendshipEntry);
+        });
+    }
+
+    // Fetch all powers from powers.json
+    fetch('powers.json')
+        .then(response => response.json())
+        .then(data => {
+            allPowers = data;
+            populatePowers();
+        })
+        .catch(error => console.error('Error loading powers:', error));
+
+    // Function to populate the Powers tab
+    function populatePowers() {
+        allPowers.forEach(power => {
+            const powerEntry = document.createElement('div');
+            powerEntry.classList.add('power-entry');
+            
+            powerEntry.innerHTML = `
+                <img src="${power.Img}" alt="${power.Name}" class="preview-img">
+                <span class="power-name">${power.Name}</span>
+                <label>
+                    <input type="checkbox" class="power-checkbox" data-command="${power.Command}">
+                    Enable
+                </label>
+            `;
+            
+            // Add event listener to the checkbox
+            const powerCheckbox = powerEntry.querySelector('.power-checkbox');
+            powerCheckbox.addEventListener('change', () => {
+                updateFinalCommand();
+            });
+            
+            powersList.appendChild(powerEntry);
         });
     }
     
@@ -268,7 +306,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         });
-    
+        
+        // Process Powers
+        const powerCheckboxes = powersList.querySelectorAll('.power-checkbox');
+        powerCheckboxes.forEach(checkbox => {
+            if (checkbox.checked) {
+                const command = checkbox.getAttribute('data-command');
+                finalCommands.push(command);
+            }
+        });
+        
         // Combine all commands into a single string
         const combinedCommands = finalCommands.join('\n');
     

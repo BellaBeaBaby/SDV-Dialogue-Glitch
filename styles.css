@@ -414,3 +414,75 @@ h1 {
         font-size: 14px;
     }
 }
+
+/* Powers Tab Pane Styles */
+.powers-info {
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    padding: 10px;
+    background-color: #1f1f1f;
+    border: 1px solid #333;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.powers-info p {
+    margin: 0;
+    font-size: 16px;
+    text-align: center;
+}
+
+.powers-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.powers-list .power-entry {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: #1f1f1f;
+    padding: 15px;
+    border-radius: 5px;
+    width: calc(25% - 20px);
+    box-sizing: border-box;
+}
+
+.powers-list .power-entry img.preview-img {
+    width: 48; 
+    height: 48px;
+    object-fit: contain;
+}
+
+.powers-list .power-entry span.power-name {
+    font-size: 16px;
+    text-align: center;
+}
+
+.powers-list .power-entry input.power-checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+    .powers-list .power-entry {
+        width: calc(33.333% - 20px); 
+    }
+}
+
+@media (max-width: 768px) {
+    .powers-list .power-entry {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .powers-list .power-entry {
+        width: 100%;
+    }
+}
